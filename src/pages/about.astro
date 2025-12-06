@@ -20,10 +20,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container">
       <div class="intro-grid">
         <div class="intro-image animate-slide-left">
-          <div class="avatar-placeholder">👨‍💻</div>
+          <div class="avatar-placeholder">
+            <img src="/images/avatar.jpg" alt="Bao Huynh - Profile Picture" />
+          </div>
         </div>
         <div class="intro-content animate-slide-right">
-          <h2>Hello! I'm a Fullstack Developer</h2>
+          <h2>Hello! I'm Bao — a Python nerd 🐍</h2>
           <p>
             I have experience in developing web applications from frontend to backend, 
             with a focus on creating products with great performance and excellent user experience.
@@ -51,14 +53,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="timeline-item animate-slide-up stagger-1">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <div class="timeline-date">2023 - Present</div>
-            <h3>Senior Fullstack Developer</h3>
-            <p class="company">Tech Company Inc.</p>
+            <div class="timeline-date">Oct 2023 - Present</div>
+            <h3>Senior Software Engineer</h3>
+            <p class="company">ONE TECH STOP VIETNAM</p>
             <ul>
-              <li>Develop and maintain web applications using Vue.js and Python</li>
-              <li>Design and implement RESTful APIs with FastAPI</li>
-              <li>Optimize database queries and improve application performance</li>
-              <li>Mentor junior developers and conduct code reviews</li>
+              <li><b>Leading technical</b> in a SCRUM team, develop a forecasting and container booking system, reducing operational costs by replacing manual Excel workflows with a scalable web application.</li>
+              <li><b>Design system architecture and database.</b></li>
+              <li>Built and maintained <b>CI/CD pipelines</b> using <b>Github Actions</b>, enabling faster, more reliable software delivery.</li>
+              <li><b>Deployed and managed cloud infrastructure</b> on <b>Google Cloud Platform (GCP)</b> with <b>Kubernetes and Helm</b> for container orchestration, scalability, and automated deployment.</li>
+              <li>Replace Offset-Limit pagination with Cursor Pagination to improve performance.</li>
+              <li>Conducted advanced data manipulation and analytics with <b>Python (Pandas, Polars, DuckDB)</b> to support forecasting models and business intelligence.</li>
+              <li>Background tasks optimized with <b>Celery</b> and <b>Redis</b> as message broker.</li>
             </ul>
           </div>
         </div>
@@ -66,29 +71,57 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="timeline-item animate-slide-up stagger-2">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <div class="timeline-date">2021 - 2023</div>
-            <h3>Fullstack Developer</h3>
-            <p class="company">Digital Solutions Ltd.</p>
+            <div class="timeline-date">May 2021 - Oct 2023</div>
+            <h3>Software Engineer</h3>
+            <p class="company">ONE TECH STOP VIETNAM</p>
             <ul>
-              <li>Build e-commerce platforms with React and Node.js</li>
-              <li>Implement payment integrations and security features</li>
-              <li>Collaborate with designers to implement responsive UIs</li>
-              <li>Write unit tests and integration tests</li>
+              <li>Maintain and develop new features for Tender Management System using <b>Django</b> and <b>Vue.js</b>.</li>
+              <li>Use <b>openpyxl</b> to read varied customer Excel formats, unify the data structure, and import it into the database.</li>
+              <li>Implement direct uploads of Excel files to <b>Google Cloud Storage</b> to conserve server bandwidth.</li>
+              <li><b>Mentoring</b> junior developers.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item animate-slide-up stagger-3">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">Oct 2019 - Apr 2021</div>
+            <h3>Junior Software Engineer</h3>
+            <p class="company">Hybrid Technologies</p>
+            <ul>
+              <li>Implement a real estate system and contribute to <b>API and database design</b>.</li>
+              <li><b>Optimize SQL</b> queries for datasets containing <b>billions of records</b>, achieving significant performance improvements.</li>
+              <li>Worked with spatial data processing using <b>PostgreSQL (PostGIS) and GeoJSON</b> for location-based services.</li>
+              <li>Built responsive and dynamic user interfaces with <b>Vue.js (Vuetify)</b>.</li>
             </ul>
           </div>
         </div>
         
-        <div class="timeline-item animate-slide-up stagger-3">
+        <div class="timeline-item animate-slide-up stagger-4">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <div class="timeline-date">2019 - 2021</div>
-            <h3>Frontend Developer</h3>
-            <p class="company">Web Agency Co.</p>
+            <div class="timeline-date">Nov 2018 - May 2019</div>
+            <h3>Software Engineer Intern (Full-time)</h3>
+            <p class="company">Sioux High Tech Software Ltd.</p>
             <ul>
-              <li>Develop responsive websites using HTML, CSS, and JavaScript</li>
-              <li>Work with Vue.js to build interactive user interfaces</li>
-              <li>Optimize websites for performance and SEO</li>
-              <li>Collaborate with backend team to integrate APIs</li>
+              <li>Develop a tablet-based mobile application using <b>Flutter</b> to welcome visitors to the company.</li>
+              <li>Built backend service in <b>Go</b> and <b>MongoDB</b>, integrate with Skype bot for real-time notifications.</li>
+              <li>Design and implement CMS page with <b>React.js</b>.</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="timeline-item animate-slide-up stagger-5">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">Mar 2018 - May 2018</div>
+            <h3>Software Engineer Intern (Part-time)</h3>
+            <p class="company">Sun Asterisk, Inc.</p>
+            <ul>
+              <li>Develop an <b>Android</b> application to provide real-time movie updates and YouTube API integration for trailers using <b>Java 8</b>.</li>
+              <li>Implement search and filtering by genres.</li>
+              <li>CRUD operations for favorite movies stored in <b>SQLite</b> database.</li>
             </ul>
           </div>
         </div>
@@ -105,8 +138,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="skill-category animate-slide-up stagger-1">
           <h3>Frontend</h3>
           <div class="skill-list">
-            <span class="skill-badge">Vue.js</span>
-            <span class="skill-badge">React</span>
+            <span class="skill-badge">Nuxt</span>
+            <span class="skill-badge">Next.js</span>
             <span class="skill-badge">TypeScript</span>
             <span class="skill-badge">JavaScript ES6+</span>
             <span class="skill-badge">HTML5</span>
@@ -122,10 +155,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <span class="skill-badge">Python</span>
             <span class="skill-badge">FastAPI</span>
             <span class="skill-badge">Django</span>
-            <span class="skill-badge">Node.js</span>
-            <span class="skill-badge">Express</span>
-            <span class="skill-badge">REST APIs</span>
-            <span class="skill-badge">GraphQL</span>
+            <span class="skill-badge">Litestar</span>
+            <span class="skill-badge">Robyn</span>
+            <span class="skill-badge">Fastify</span>
+            <span class="skill-badge">Pandas</span>
+            <span class="skill-badge">Polars</span>
+            <span class="skill-badge">DuckDB</span>
           </div>
         </div>
         
@@ -133,12 +168,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <h3>Database & Tools</h3>
           <div class="skill-list">
             <span class="skill-badge">PostgreSQL</span>
-            <span class="skill-badge">MongoDB</span>
+            <span class="skill-badge">BigQuery</span>
             <span class="skill-badge">Redis</span>
             <span class="skill-badge">Git</span>
             <span class="skill-badge">Docker</span>
             <span class="skill-badge">CI/CD</span>
-            <span class="skill-badge">AWS</span>
+            <span class="skill-badge">GCP</span>
           </div>
         </div>
       </div>
@@ -193,6 +228,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     justify-content: center;
     font-size: 8rem;
     box-shadow: var(--shadow-xl), var(--shadow-glow);
+    overflow: hidden;
+  }
+  
+  .avatar-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   
   .intro-content h2 {
