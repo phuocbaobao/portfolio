@@ -1,71 +1,77 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import BlogFilter from '../components/BlogFilter.vue';
-import { readdirSync, readFileSync } from 'fs';
-import { join } from 'path';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogFilter from "../components/BlogFilter.vue";
+import { readdirSync, readFileSync } from "fs";
+import { join } from "path";
 
 // Read all markdown files from content/blog
-const blogDir = join(process.cwd(), 'src', 'content', 'blog');
-const files = readdirSync(blogDir).filter(file => file.endsWith('.md'));
+const blogDir = join(process.cwd(), "src", "content", "blog");
+const files = readdirSync(blogDir).filter((file) => file.endsWith(".md"));
 
 // Parse frontmatter and create blog posts array
-const blogPosts = files.map((filename, index) => {
-  const slug = filename.replace('.md', '');
-  const content = readFileSync(join(blogDir, filename), 'utf-8');
-  
-  // Extract frontmatter
-  const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
-  const frontmatter: Record<string, any> = {};
-  
-  if (frontmatterMatch) {
-    const frontmatterText = frontmatterMatch[1];
-    frontmatterText.split('\n').forEach(line => {
-      const match = line.match(/^(\w+):\s*(.+)$/);
-      if (match) {
-        const key = match[1];
-        let value: any = match[2];
-        
-        // Handle quoted strings
-        if (value.startsWith('"') && value.endsWith('"')) {
-          value = value.slice(1, -1);
+const blogPosts = files
+  .map((filename, index) => {
+    const slug = filename.replace(".md", "");
+    const content = readFileSync(join(blogDir, filename), "utf-8");
+
+    // Extract frontmatter
+    const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
+    const frontmatter: Record<string, any> = {};
+
+    if (frontmatterMatch) {
+      const frontmatterText = frontmatterMatch[1];
+      frontmatterText.split("\n").forEach((line) => {
+        const match = line.match(/^(\w+):\s*(.+)$/);
+        if (match) {
+          const key = match[1];
+          let value: any = match[2];
+
+          // Handle quoted strings
+          if (value.startsWith('"') && value.endsWith('"')) {
+            value = value.slice(1, -1);
+          }
+
+          // Handle arrays (tags)
+          if (value.startsWith("[") && value.endsWith("]")) {
+            value = value
+              .slice(1, -1)
+              .split(",")
+              .map((v: string) => v.trim().replace(/"/g, ""));
+          }
+
+          frontmatter[key] = value;
         }
-        
-        // Handle arrays (tags)
-        if (value.startsWith('[') && value.endsWith(']')) {
-          value = value.slice(1, -1).split(',').map((v: string) => v.trim().replace(/"/g, ''));
-        }
-        
-        frontmatter[key] = value;
-      }
-    });
-  }
-  
-  return {
-    id: index + 1,
-    slug,
-    title: frontmatter.title || 'Untitled',
-    date: frontmatter.date || new Date().toISOString().split('T')[0],
-    description: frontmatter.description || '',
-    tags: frontmatter.tags || [],
-    author: frontmatter.author || 'Anonymous',
-    readTime: frontmatter.readTime || '5 min read'
-  };
-}).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()); // Sort by date, newest first
+      });
+    }
+
+    return {
+      id: index + 1,
+      slug,
+      title: frontmatter.title || "Untitled",
+      date: frontmatter.date || new Date().toISOString().split("T")[0],
+      description: frontmatter.description || "",
+      tags: frontmatter.tags || [],
+      author: frontmatter.author || "Anonymous",
+      readTime: frontmatter.readTime || "5 min read",
+    };
+  })
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()); // Sort by date, newest first
 ---
 
-<BaseLayout title="Blog - Fullstack Developer Portfolio" description="Đọc các bài viết về web development, Python, JavaScript, và nhiều hơn nữa">
+<BaseLayout
+  title="Blog - Fullstack Developer Portfolio"
+  description="Read articles about web development, Python, JavaScript, and more"
+>
   <!-- Blog Hero -->
   <section class="blog-hero">
     <div class="container">
       <div class="blog-hero-content animate-fade-in">
         <h1 class="animate-slide-up">Blog</h1>
-        <p class="lead animate-slide-up stagger-1">
-          Sharing knowledge and experience about web development
-        </p>
+        <p class="lead animate-slide-up stagger-1">Sharing is Learning.</p>
       </div>
     </div>
   </section>
-  
+
   <!-- Blog Content -->
   <section class="section blog-section">
     <div class="container">
@@ -80,24 +86,24 @@ const blogPosts = files.map((filename, index) => {
     padding: var(--spacing-3xl) 0;
     text-align: center;
   }
-  
+
   .blog-hero h1 {
     font-size: var(--text-5xl);
     color: white;
     margin-bottom: var(--spacing-md);
   }
-  
+
   .lead {
     font-size: var(--text-xl);
     color: rgba(255, 255, 255, 0.9);
     max-width: 700px;
     margin: 0 auto;
   }
-  
+
   .blog-section {
     background: var(--color-bg);
   }
-  
+
   @media (max-width: 768px) {
     .blog-hero h1 {
       font-size: var(--text-4xl);

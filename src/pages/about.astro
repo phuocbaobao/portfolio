@@ -1,20 +1,24 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="About - Fullstack Developer Portfolio" description="Tìm hiểu thêm về tôi, kinh nghiệm và kỹ năng của tôi">
+<BaseLayout
+  title="About - Fullstack Developer Portfolio"
+  description="Know more about me, my experience and skills"
+>
   <!-- About Hero -->
   <section class="about-hero">
     <div class="container">
       <div class="about-hero-content animate-fade-in">
         <h1 class="animate-slide-up">About Me</h1>
         <p class="lead animate-slide-up stagger-1">
-          Fullstack Developer with a passion for creating high-quality web products
+          Fullstack Developer with a passion for creating high-quality web
+          products
         </p>
       </div>
     </div>
   </section>
-  
+
   <!-- Introduction -->
   <section class="section intro-section">
     <div class="container">
@@ -27,28 +31,32 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="intro-content animate-slide-right">
           <h2>Hello! I'm Bao — a Python nerd 🐍</h2>
           <p>
-            I have experience in developing web applications from frontend to backend, 
-            with a focus on creating products with great performance and excellent user experience.
+            I have experience in developing web applications from frontend to
+            backend, with a focus on creating products with great performance
+            and excellent user experience.
           </p>
           <p>
-            I'm always looking for opportunities to learn new technologies and apply best practices 
-            to my daily work. I believe that good code is not just code that works, 
-            but code that is readable, maintainable, and scalable.
+            I'm always looking for opportunities to learn new technologies and
+            apply best practices to my daily work. I believe that good code is
+            not just code that works, but code that is readable, maintainable,
+            and scalable.
           </p>
           <p>
-            Besides coding, I enjoy sharing knowledge through blogging and participating in 
-            developer communities to learn from others.
+            Besides coding, I enjoy sharing knowledge through blogging and
+            participating in developer communities to learn from others.
           </p>
         </div>
       </div>
     </div>
   </section>
-  
+
   <!-- Experience Timeline -->
   <section class="section experience-section">
     <div class="container">
-      <h2 class="section-title text-center animate-slide-up">Work Experience</h2>
-      
+      <h2 class="section-title text-center animate-slide-up">
+        Work Experience
+      </h2>
+
       <div class="timeline">
         <div class="timeline-item animate-slide-up stagger-1">
           <div class="timeline-marker"></div>
@@ -57,17 +65,40 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <h3>Senior Software Engineer</h3>
             <p class="company">ONE TECH STOP VIETNAM</p>
             <ul>
-              <li><b>Leading technical</b> in a SCRUM team, develop a forecasting and container booking system, reducing operational costs by replacing manual Excel workflows with a scalable web application.</li>
+              <li>
+                <b>Leading technical</b> in a SCRUM team, develop a forecasting and
+                container booking system, reducing operational costs by replacing
+                manual Excel workflows with a scalable web application.
+              </li>
               <li><b>Design system architecture and database.</b></li>
-              <li>Built and maintained <b>CI/CD pipelines</b> using <b>Github Actions</b>, enabling faster, more reliable software delivery.</li>
-              <li><b>Deployed and managed cloud infrastructure</b> on <b>Google Cloud Platform (GCP)</b> with <b>Kubernetes and Helm</b> for container orchestration, scalability, and automated deployment.</li>
-              <li>Replace Offset-Limit pagination with Cursor Pagination to improve performance.</li>
-              <li>Conducted advanced data manipulation and analytics with <b>Python (Pandas, Polars, DuckDB)</b> to support forecasting models and business intelligence.</li>
-              <li>Background tasks optimized with <b>Celery</b> and <b>Redis</b> as message broker.</li>
+              <li>
+                Built and maintained <b>CI/CD pipelines</b> using <b
+                  >Github Actions</b
+                >, enabling faster, more reliable software delivery.
+              </li>
+              <li>
+                <b>Deployed and managed cloud infrastructure</b> on <b
+                  >Google Cloud Platform (GCP)</b
+                > with <b>Kubernetes and Helm</b> for container orchestration, scalability,
+                and automated deployment.
+              </li>
+              <li>
+                Replace Offset-Limit pagination with Cursor Pagination to
+                improve performance.
+              </li>
+              <li>
+                Conducted advanced data manipulation and analytics with <b
+                  >Python (Pandas, Polars, DuckDB)</b
+                > to support forecasting models and business intelligence.
+              </li>
+              <li>
+                Background tasks optimized with <b>Celery</b> and <b>Redis</b> as
+                message broker.
+              </li>
             </ul>
           </div>
         </div>
-        
+
         <div class="timeline-item animate-slide-up stagger-2">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
@@ -75,9 +106,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <h3>Software Engineer</h3>
             <p class="company">ONE TECH STOP VIETNAM</p>
             <ul>
-              <li>Maintain and develop new features for Tender Management System using <b>Django</b> and <b>Vue.js</b>.</li>
-              <li>Use <b>openpyxl</b> to read varied customer Excel formats, unify the data structure, and import it into the database.</li>
-              <li>Implement direct uploads of Excel files to <b>Google Cloud Storage</b> to conserve server bandwidth.</li>
+              <li>
+                Maintain and develop new features for Tender Management System
+                using <b>Django</b> and <b>Vue.js</b>.
+              </li>
+              <li>
+                Use <b>openpyxl</b> to read varied customer Excel formats, unify
+                the data structure, and import it into the database.
+              </li>
+              <li>
+                Implement direct uploads of Excel files to <b
+                  >Google Cloud Storage</b
+                > to conserve server bandwidth.
+              </li>
               <li><b>Mentoring</b> junior developers.</li>
             </ul>
           </div>
@@ -90,14 +131,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <h3>Junior Software Engineer</h3>
             <p class="company">Hybrid Technologies</p>
             <ul>
-              <li>Implement a real estate system and contribute to <b>API and database design</b>.</li>
-              <li><b>Optimize SQL</b> queries for datasets containing <b>billions of records</b>, achieving significant performance improvements.</li>
-              <li>Worked with spatial data processing using <b>PostgreSQL (PostGIS) and GeoJSON</b> for location-based services.</li>
-              <li>Built responsive and dynamic user interfaces with <b>Vue.js (Vuetify)</b>.</li>
+              <li>
+                Implement a real estate system and contribute to <b
+                  >API and database design</b
+                >.
+              </li>
+              <li>
+                <b>Optimize SQL</b> queries for datasets containing <b
+                  >billions of records</b
+                >, achieving significant performance improvements.
+              </li>
+              <li>
+                Worked with spatial data processing using <b
+                  >PostgreSQL (PostGIS) and GeoJSON</b
+                > for location-based services.
+              </li>
+              <li>
+                Built responsive and dynamic user interfaces with <b
+                  >Vue.js (Vuetify)</b
+                >.
+              </li>
             </ul>
           </div>
         </div>
-        
+
         <div class="timeline-item animate-slide-up stagger-4">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
@@ -105,13 +162,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <h3>Software Engineer Intern (Full-time)</h3>
             <p class="company">Sioux High Tech Software Ltd.</p>
             <ul>
-              <li>Develop a tablet-based mobile application using <b>Flutter</b> to welcome visitors to the company.</li>
-              <li>Built backend service in <b>Go</b> and <b>MongoDB</b>, integrate with Skype bot for real-time notifications.</li>
+              <li>
+                Develop a tablet-based mobile application using <b>Flutter</b> to
+                welcome visitors to the company.
+              </li>
+              <li>
+                Built backend service in <b>Go</b> and <b>MongoDB</b>, integrate
+                with Skype bot for real-time notifications.
+              </li>
               <li>Design and implement CMS page with <b>React.js</b>.</li>
             </ul>
           </div>
         </div>
-        
+
         <div class="timeline-item animate-slide-up stagger-5">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
@@ -119,21 +182,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <h3>Software Engineer Intern (Part-time)</h3>
             <p class="company">Sun Asterisk, Inc.</p>
             <ul>
-              <li>Develop an <b>Android</b> application to provide real-time movie updates and YouTube API integration for trailers using <b>Java 8</b>.</li>
+              <li>
+                Develop an <b>Android</b> application to provide real-time movie
+                updates and YouTube API integration for trailers using <b
+                  >Java 8</b
+                >.
+              </li>
               <li>Implement search and filtering by genres.</li>
-              <li>CRUD operations for favorite movies stored in <b>SQLite</b> database.</li>
+              <li>
+                CRUD operations for favorite movies stored in <b>SQLite</b> database.
+              </li>
             </ul>
           </div>
         </div>
       </div>
     </div>
   </section>
-  
+
   <!-- Skills Detail -->
   <section class="section skills-detail-section">
     <div class="container">
-      <h2 class="section-title text-center animate-slide-up">Detailed Skills</h2>
-      
+      <h2 class="section-title text-center animate-slide-up">
+        Detailed Skills
+      </h2>
+
       <div class="skills-categories">
         <div class="skill-category animate-slide-up stagger-1">
           <h3>Frontend</h3>
@@ -148,7 +220,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <span class="skill-badge">Astro</span>
           </div>
         </div>
-        
+
         <div class="skill-category animate-slide-up stagger-2">
           <h3>Backend</h3>
           <div class="skill-list">
@@ -163,7 +235,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <span class="skill-badge">DuckDB</span>
           </div>
         </div>
-        
+
         <div class="skill-category animate-slide-up stagger-3">
           <h3>Database & Tools</h3>
           <div class="skill-list">
@@ -187,37 +259,37 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     padding: var(--spacing-3xl) 0;
     text-align: center;
   }
-  
+
   .about-hero h1 {
     font-size: var(--text-5xl);
     color: white;
     margin-bottom: var(--spacing-md);
   }
-  
+
   .lead {
     font-size: var(--text-xl);
     color: rgba(255, 255, 255, 0.9);
     max-width: 700px;
     margin: 0 auto;
   }
-  
+
   /* Introduction */
   .intro-section {
     background: var(--color-bg);
   }
-  
+
   .intro-grid {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: var(--spacing-3xl);
     align-items: center;
   }
-  
+
   .intro-image {
     display: flex;
     justify-content: center;
   }
-  
+
   .avatar-placeholder {
     width: 250px;
     height: 250px;
@@ -230,38 +302,38 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     box-shadow: var(--shadow-xl), var(--shadow-glow);
     overflow: hidden;
   }
-  
+
   .avatar-placeholder img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-  
+
   .intro-content h2 {
     font-size: var(--text-3xl);
     margin-bottom: var(--spacing-lg);
   }
-  
+
   .intro-content p {
     font-size: var(--text-lg);
     line-height: 1.8;
     margin-bottom: var(--spacing-md);
   }
-  
+
   /* Experience Timeline */
   .experience-section {
     background: var(--color-bg-secondary);
   }
-  
+
   .timeline {
     max-width: 800px;
     margin: var(--spacing-2xl) auto 0;
     position: relative;
     padding-left: var(--spacing-xl);
   }
-  
+
   .timeline::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 0;
@@ -269,12 +341,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     width: 2px;
     background: var(--gradient-primary);
   }
-  
+
   .timeline-item {
     position: relative;
     margin-bottom: var(--spacing-2xl);
   }
-  
+
   .timeline-marker {
     position: absolute;
     left: calc(-1 * var(--spacing-xl) - 6px);
@@ -285,70 +357,70 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     background: var(--color-primary);
     box-shadow: 0 0 0 4px var(--color-bg-secondary);
   }
-  
+
   .timeline-content {
     background: var(--color-bg);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-xl);
     padding: var(--spacing-lg);
   }
-  
+
   .timeline-date {
     color: var(--color-primary);
     font-weight: 600;
     font-size: var(--text-sm);
     margin-bottom: var(--spacing-xs);
   }
-  
+
   .timeline-content h3 {
     font-size: var(--text-xl);
     margin-bottom: var(--spacing-xs);
   }
-  
+
   .company {
     color: var(--color-text-muted);
     font-size: var(--text-base);
     margin-bottom: var(--spacing-md);
   }
-  
+
   .timeline-content ul {
     list-style: none;
     padding-left: 0;
   }
-  
+
   .timeline-content li {
     position: relative;
     padding-left: var(--spacing-md);
     margin-bottom: var(--spacing-xs);
     color: var(--color-text-secondary);
   }
-  
+
   .timeline-content li::before {
-    content: '▹';
+    content: "▹";
     position: absolute;
     left: 0;
     color: var(--color-primary);
   }
-  
+
   /* Skills Detail */
   .skills-detail-section {
     background: var(--color-bg);
   }
-  
+
   .skills-categories {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-xl);
     margin-top: var(--spacing-2xl);
   }
-  
+
   .skill-category {
     background: var(--color-bg-secondary);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-xl);
     padding: var(--spacing-xl);
   }
-  
+
   .skill-category h3 {
     font-size: var(--text-2xl);
     margin-bottom: var(--spacing-md);
@@ -357,13 +429,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  
+
   .skill-list {
     display: flex;
     flex-wrap: wrap;
     gap: var(--spacing-sm);
   }
-  
+
   .skill-badge {
     padding: var(--spacing-xs) var(--spacing-md);
     background: var(--color-bg-tertiary);
@@ -373,34 +445,34 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-weight: 500;
     transition: all var(--transition-fast);
   }
-  
+
   .skill-badge:hover {
     background: var(--gradient-primary);
     color: white;
     transform: translateY(-2px);
   }
-  
+
   /* Responsive */
   @media (max-width: 768px) {
     .intro-grid {
       grid-template-columns: 1fr;
       gap: var(--spacing-xl);
     }
-    
+
     .avatar-placeholder {
       width: 200px;
       height: 200px;
       font-size: 6rem;
     }
-    
+
     .about-hero h1 {
       font-size: var(--text-4xl);
     }
-    
+
     .timeline {
       padding-left: var(--spacing-lg);
     }
-    
+
     .skills-categories {
       grid-template-columns: 1fr;
     }
