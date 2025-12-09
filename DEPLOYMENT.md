@@ -107,6 +107,28 @@ git push origin main
 
 The site will automatically rebuild and redeploy!
 
+## Environment Variables
+
+The portfolio uses environment variables for sensitive data like API keys. You need to configure these as **GitHub Secrets** for deployment.
+
+### Setting Up GitHub Secrets
+
+1. Go to your GitHub repository
+2. Click **Settings** → **Secrets and variables** → **Actions**
+3. Click **New repository secret**
+4. Add the following secret:
+   - **Name**: `RESEND_API_KEY`
+   - **Value**: Your Resend API key (get it from [resend.com/api-keys](https://resend.com/api-keys))
+5. Click **Add secret**
+
+### Required Secrets
+
+| Secret Name      | Description                           | Required               |
+| ---------------- | ------------------------------------- | ---------------------- |
+| `RESEND_API_KEY` | API key for sending emails via Resend | Yes (for contact form) |
+
+**Note:** After adding secrets, you may need to re-run the deployment workflow for changes to take effect.
+
 ## Local Development
 
 For local development, the site runs at `http://localhost:4321`:

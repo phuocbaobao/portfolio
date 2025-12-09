@@ -131,25 +131,48 @@ const handleSubmit = async () => {
   
   isSubmitting.value = true;
   
-  // Simulate API call
-  await new Promise(resolve => setTimeout(resolve, 1500));
-  
-  // In a real application, you would send the data to your backend here
-  console.log('Form submitted:', formData);
-  
-  isSubmitting.value = false;
-  showSuccess.value = true;
-  
-  // Reset form
-  formData.name = '';
-  formData.email = '';
-  formData.subject = '';
-  formData.message = '';
-  
-  // Hide success message after 5 seconds
-  setTimeout(() => {
-    showSuccess.value = false;
-  }, 5000);
+  try {
+    // Send email via API endpoint
+    const response = await fetch('/api/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      }),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok || !result.success) {
+      throw new Error(result.error || 'Failed to send email');
+    }
+
+    // Success!
+    console.log('Email sent successfully:', result);
+    showSuccess.value = true;
+    
+    // Reset form
+    formData.name = '';
+    formData.email = '';
+    formData.subject = '';
+    formData.message = '';
+    
+    // Hide success message after 5 seconds
+    setTimeout(() => {
+      showSuccess.value = false;
+    }, 5000);
+    
+  } catch (error) {
+    console.error('Error sending email:', error);
+    alert('Failed to send message. Please try again or contact me directly at phuocbaohuynh@gmail.com');
+  } finally {
+    isSubmitting.value = false;
+  }
 };
 </script>
 
