@@ -132,28 +132,49 @@ const handleSubmit = async () => {
   isSubmitting.value = true;
   
   try {
-    // Send email via API endpoint
-    const response = await fetch('/api/send-email', {
+    // Send email directly from frontend using Resend API
+    const response = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
+        'Authorization': `Bearer ${import.meta.env.RESEND_API_KEY}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        name: formData.name,
-        email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
+        from: 'Portfolio Contact Form <onboarding@resend.dev>',
+        to: ['phuocbaohuynh@gmail.com'],
+        subject: formData.subject || `New message from ${formData.name}`,
+        html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+            <h2 style="color: #6366f1;">New Contact Form Submission</h2>
+            <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
+              <p style="margin: 10px 0;"><strong>Name:</strong> ${formData.name}</p>
+              <p style="margin: 10px 0;"><strong>Email:</strong> ${formData.email}</p>
+              ${formData.subject ? `<p style="margin: 10px 0;"><strong>Subject:</strong> ${formData.subject}</p>` : ''}
+            </div>
+            <div style="margin: 20px 0;">
+              <h3 style="color: #374151;">Message:</h3>
+              <p style="white-space: pre-wrap; line-height: 1.6;">${formData.message}</p>
+            </div>
+            <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 20px 0;">
+            <p style="color: #6b7280; font-size: 14px;">
+              This email was sent from your portfolio contact form.
+            </p>
+          </div>
+        `,
+        reply_to: formData.email,
       }),
     });
 
-    const result = await response.json();
-
-    if (!response.ok || !result.success) {
-      throw new Error(result.error || 'Failed to send email');
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error('Resend API error:', errorData);
+      throw new Error('Failed to send email. Please try again later.');
     }
 
-    // Success!
+    const result = await response.json();
     console.log('Email sent successfully:', result);
+    
+    // Success!
     showSuccess.value = true;
     
     // Reset form
